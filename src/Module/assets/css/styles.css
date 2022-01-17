@@ -1,0 +1,193 @@
+section {
+    padding: 20px 20px;
+}
+#layout.default {
+    padding-top: 60px;
+    max-width: 100%;
+    width: 100%;
+}
+#header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    z-index: 9;
+}
+#header #header-content {
+    position: relative;
+    height: 60px;
+    padding: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 15%);
+    width: 100%;
+}
+#header #header-logo {
+    width: 350px;
+    margin: 0;
+    padding: 25px 50px;
+    display: flex;
+    align-items: center;
+}
+#header-logo img {
+    max-width: 100%;
+    max-height: 100px;
+}
+#main {
+    position: relative;
+    max-width: 100%;
+    min-height: calc(100vh - 398px);
+    padding: 20px 0;
+}
+#main .article-row{
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+.article-row .article-list, .article-row .article-view{
+    width: 50%;
+    text-align: center;
+    padding: 10px 20px;
+}
+.articles .article-lists{
+    text-align: left;
+    font-size: 20px;
+    font-weight: 600;
+}
+.articles .article {
+    display: flex;
+    padding: 10px 10px;
+    background: #bfc5ca;
+    border-radius: 10px;
+    margin: 15px 0px;
+}
+.articles .article .thumb {
+    min-width: 100px;
+    width: 100px;
+    height: 120px;
+}
+.articles .article .thumb img{
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+.articles .article .body {
+    flex: 1 1;
+    padding: 0.5rem 1rem;
+}
+.articles .article .title {
+    border-radius: 0.25rem;
+    display: block;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    letter-spacing: -.06rem;
+    min-height: 1rem;
+    text-align: left;
+}
+.articles .article .author, .source {
+    text-align: left;
+    color: #888;
+}
+.articles .article .date {
+    text-align: right;
+    color: #888;
+}
+.articles .article .content, .article-view .content {
+    border-radius: 0.25rem;
+    font-size: .85rem;
+    min-height: 1.875rem;
+    text-align: justify;
+}
+
+.articles .article.loading .content, .articles .article.loading .thumb, .articles .article.loading .title {
+    background-color: rgba(0,0,0,.11);
+    position: relative;
+    overflow: hidden;
+}
+.articles .article.loading .content:after, .articles .article.loading .thumb:after, .articles .article.loading .title:after {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    -webkit-animation: skeleton-wave 1.6s linear .5s infinite;
+    animation: skeleton-wave 1.6s linear .5s infinite;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    background: linear-gradient(
+            90deg
+            ,transparent,rgba(0,0,0,.04),transparent);
+}
+.numbers a {
+    margin: 0 10px;
+}
+.modal .content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.modal .content img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+.article-view .list-item{
+    background: #bfc5ca;
+    padding: 10px;
+}
+.article-list{
+    border-right: 1px solid #888888;
+}
+.article-list .articles .article{
+    cursor: pointer;
+}
+.active{
+    border-bottom: 3px solid blue;
+}
+input{
+    width: 93%;
+    position: relative;
+    height: 42px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    padding: 10px 20px;
+    background-color: #fff;
+    font-size: .8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@media screen and (max-width: 768px) {
+    .modal .content {
+        flex-direction: column;
+    }
+
+    .modal .content img {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 600px){
+    #main .article-row{
+        display: block;
+    }
+    .article-row .article-list, .article-row .article-view{
+        width: 100%;
+    }
+    .article-list{
+        border-right: unset;
+    }
+}
+@media screen and (max-width: 1024px){
+    #main .article-row{
+        display: block;
+    }
+    .article-row .article-list, .article-row .article-view{
+        width: 100%;
+    }
+    .article-list{
+        border-right: unset;
+    }
+}
